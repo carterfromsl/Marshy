@@ -23,8 +23,8 @@
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(3,31%);
-      grid-gap: 1.11%;
+      grid-template-columns: repeat(3,32%);
+      grid-gap: 2%;
     }
     .gallery article {
       position: relative;
@@ -52,23 +52,29 @@
     .gallery article p {
       transition: inherit;
       opacity: 0;
-      bottom: -1em;
-      left: 0;
-      width: 100%;
+      bottom: 5px;
+      left: 5px;
+      width: calc(100% - 10px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       position: absolute;
       margin: 0;
       font-size: 13px;
       padding: 5px;
       background: rgba(0,0,0,0.5);
+      color: white;
+      font-weight: bold;
     }
     .gallery article:hover p {
       opacity: 1;
       bottom: 0;
+      left: 0;
+      width: 100%;
     }
     @media (max-width: 700px) {
       .gallery {
         grid-template-columns: repeat(2,49%);
-        grid-gap: 2%;
       }
     }
   </style>
@@ -111,9 +117,11 @@
       <p>2009</p>
     </article>
     <article>
-      <img src="https://cybersandbox.ca/wp-content/uploads/2024/11/marshy-2015-768x576.jpg" alt="Marshy 2015" width="300" />
+      <img src="https://cybersandbox.ca/wp-content/uploads/2024/11/marshy-2015.jpg" alt="Marshy 2015" width="300" />
       <p>2015</p>
     </article>
+  </div>
+  
   <hr />
   
   <div class="video">
