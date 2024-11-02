@@ -12,35 +12,30 @@
 <body>
 
 <h1>LLXI.me - Marshmallow "Marshy" Lovelace</h1>
-
-<img class="topright" src="https://cybersandbox.ca/wp-content/uploads/2023/03/gears-tr.gif" alt="Gears" />
-
-<img class="bottomleft" src="https://cybersandbox.ca/wp-content/uploads/2023/03/gears-bl.gif" alt="Gears" />
-
-<aside id="desktop">
+  
+  <aside id="desktop">
   <img src="https://assets.codepen.io/5896374/skull2.gif" alt="" />
-  <p><a class="button" href="https://cybersandbox.ca/" target="_blank">cybersandbox.ca</a></p>
+  <p><a class="button" href="https://llxi.me/" target="_blank">HOME</a></p>
 </aside>
 
 <main id="popup">
-  <legend>LLXI.ME Homepage</legend>
-  <p><b>Select a resource below to view.</b></p>
+  <legend>Marshy's Homepage</legend>
+  <p><b>Countdown to Marshy's 18th Birthday:</b></p>
+  <h3 id="countdown">0D:0H:0M:0S</h3>
+  
+<div class="video">
+  <h4>Marshmallow the Movie</h4>
+  <div style="padding:61.29% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1025767197?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Marshmallow the Movie (2012) - Demo Flash Animation"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+  <p>This is a screen recording of the concept for a Flash animated short film about Marshmallow I started making in 2012 when I was 14. Featuring royalty-free music by Kevin MacLeod!</p>
+</div>
+
   <ul>
-    <li>Personal Projects <a href="https://llxi.me/projects/">[llxi.me/projects]</a>
-    </li>
-    <li>Professional Work <a href="https://llxi.me/work/">[llxi.me/work]</a>
-    </li>
-    <li>Collection & Archive <a href="https://archive.llxi.me/">[archive.llxi.me]</a>
-    </li>
-    <li>Visit My Blog <a target="_blank" href="https://cybersandbox.ca/">[cybersandbox.ca]</a>
-    </li>
-    <li>Codepen <a target="_blank" href="https://codepen.io/carterfromsl">[codepen.io/carterfromsl]</a>
-    </li>
-    <li>Github <a target="_blank" href="https://github.com/carterfromsl">[github.com/carterfromsl]</a>
+    <li>Back Home <a href="https://llxi.me/">[https://llxi.me/]</a>
     </li>
   </ul>
+  
   <nav>
-    <span><a href="#" onClick="closePopup()">Ok</a></span>
+    <span><a href="#" onClick="closePopup()">Pet the Dog</a></span>
     <span><a href="#" onClick="closePopup()">Cancel</a></span>
   </nav>
 </main>
@@ -53,6 +48,35 @@
     var popup = document.getElementById('popup');
     popup.classList.toggle('hidden');
   }
+
+  //BDAY COUNTDOWN
+  function countdownToBirthday() {
+  const countdownElement = document.getElementById("countdown");
+  const targetDate = new Date("February 12, 2025 00:00:00 CST");
+
+  function updateCountdown() {
+    const now = new Date();
+    const timeRemaining = targetDate - now;
+
+    if (timeRemaining <= 0) {
+      countdownElement.textContent = "0D:0H:0M:0S";
+      clearInterval(interval);
+      return;
+    }
+
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+    countdownElement.textContent = `${days}D:${hours}H:${minutes}M:${seconds}S`;
+  }
+
+  const interval = setInterval(updateCountdown, 1000);
+  updateCountdown(); // Initial call to update immediately
+}
+
+countdownToBirthday();
 </script>
 
 </body>
