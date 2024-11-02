@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Marshy: A Homepage for my 18-Year-Old Dog | LLXI.me</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://cybersandbox.ca/wp-content/uploads/2023/03/gear-min.gif">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>LLXI.me - Marshmallow "Marshy" Lovelace</h1>
+
+<img class="topright" src="https://cybersandbox.ca/wp-content/uploads/2023/03/gears-tr.gif" alt="Gears" />
+
+<img class="bottomleft" src="https://cybersandbox.ca/wp-content/uploads/2023/03/gears-bl.gif" alt="Gears" />
+
+<aside id="desktop">
+  <img src="https://assets.codepen.io/5896374/skull2.gif" alt="" />
+  <p><a class="button" href="https://cybersandbox.ca/" target="_blank">cybersandbox.ca</a></p>
+</aside>
+
+<main id="popup">
+  <legend>LLXI.ME Homepage</legend>
+  <p><b>Select a resource below to view.</b></p>
+  <ul>
+    <li>Personal Projects <a href="https://llxi.me/projects/">[llxi.me/projects]</a>
+    </li>
+    <li>Professional Work <a href="https://llxi.me/work/">[llxi.me/work]</a>
+    </li>
+    <li>Collection & Archive <a href="https://archive.llxi.me/">[archive.llxi.me]</a>
+    </li>
+    <li>Visit My Blog <a target="_blank" href="https://cybersandbox.ca/">[cybersandbox.ca]</a>
+    </li>
+    <li>Codepen <a target="_blank" href="https://codepen.io/carterfromsl">[codepen.io/carterfromsl]</a>
+    </li>
+    <li>Github <a target="_blank" href="https://github.com/carterfromsl">[github.com/carterfromsl]</a>
+    </li>
+  </ul>
+  <nav>
+    <span><a href="#" onClick="closePopup()">Ok</a></span>
+    <span><a href="#" onClick="closePopup()">Cancel</a></span>
+  </nav>
+</main>
+
+<div class="backpanel"><button onClick="closePopup()">Launch Library</button></div>
+
+<script>
+  function closePopup() {
+    event.preventDefault();
+    var popup = document.getElementById('popup');
+    popup.classList.toggle('hidden');
+  }
+</script>
+
+</body>
+
+</html>
