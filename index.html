@@ -15,7 +15,7 @@
       color: #C74C8C;
       letter-spacing: 0.05em;
       margin: 0.5em 0;
-      text-shadow: 0.05em 0.05em black;
+      text-shadow: 0.05em 0.05em var(--black);
     }
     h4 {
       font-weight: bold;
@@ -25,20 +25,21 @@
       display: grid;
       grid-template-columns: repeat(3,32%);
       grid-gap: 2%;
+      clear: both;
+      margin-bottom: 20px;
     }
     .gallery article {
       position: relative;
       margin-bottom: 10px;
-      padding: 5px;
+      padding: 4px;
       background: white;
       border: 1px solid;
       transition: all 0.3s steps(3);
       overflow: hidden;
     }
     .gallery article:hover {
-      box-shadow: 4px 4px 0 var(--black);
+      box-shadow: 4px 4px 0;
       transform: translate(-2px, -2px);
-      color: var(--bg);
     }
     .gallery img {
       width: 100%;
@@ -46,9 +47,10 @@
       object-fit: cover;
       transition: inherit;
       display: block;
+      border: 1px solid transparent;
     }
     .gallery article:hover img {
-      transform: scale(1.1);
+      border-color: var(--bg);
     }
     .gallery article p {
       transition: inherit;
@@ -125,6 +127,14 @@
     <article>
       <img src="https://cybersandbox.ca/wp-content/uploads/2024/11/marshy-2016.jpg" alt="Marshy 2016" width="300" />
       <p>2016</p>
+    </article>
+    <article>
+      <img src="https://cybersandbox.ca/wp-content/uploads/2024/11/marshy-2017.jpg" alt="Marshy 2017" width="300" />
+      <p>2017</p>
+    </article>
+    <article>
+      <img src="https://cybersandbox.ca/wp-content/uploads/2024/11/marshy-2016.jpg" alt="Marshy 2018" width="300" />
+      <p>2018</p>
     </article>
   </div>
   
