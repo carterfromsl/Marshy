@@ -15,7 +15,7 @@
       color: #C74C8C;
       letter-spacing: 0.05em;
       margin: 0.5em 0;
-      text-shadow: 0.05em 0.05em black, -0.05em -0.05em white;
+      text-shadow: 0.075em 0.075em black;
     }
     h4 {
       font-weight: bold;
@@ -41,7 +41,7 @@
     }
     .gallery img {
       width: 100%;
-      max-height: 200px;
+      height: 200px;
       object-fit: cover;
       transition: inherit;
       display: block;
@@ -75,6 +75,9 @@
     @media (max-width: 700px) {
       .gallery {
         grid-template-columns: repeat(2,49%);
+      }
+      #countdown {
+        font-size: 1.5em;
       }
     }
   </style>
