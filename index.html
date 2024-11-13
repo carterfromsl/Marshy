@@ -23,6 +23,23 @@
       font-size: 1.25em;
       margin-bottom: 0.5em;
     }
+    @keyframes waveInertia {
+      0% {
+        transform: rotate(-3deg) translateY(0);
+      }
+      25% {
+        transform: rotate(3deg) translateY(-3px);
+      }
+      50% {
+        transform: rotate(0deg) translateY(0);
+      }
+      75% {
+        transform: rotate(-3deg) translateY(3px);
+      }
+      100% {
+        transform: rotate(3deg) translateY(0);
+      }
+    }
     #desktop img {
       object-fit: contain;
       position: absolute;
@@ -31,7 +48,9 @@
       left: unset;
       top: calc(50% - 100px);
       right: calc(50% - 100px);
-      transition: all 0.5s ease;
+      transition: all 0.5s steps(5);
+      animation: waveInertia 1.5s steps(8) infinite;
+      transform-origin: bottom center;
     }
     #desktop:not(.active) img {
       width: 80px;
@@ -61,6 +80,15 @@
     }
     #popup .infobox li::after {
       display: none !important;
+    }
+    #desktop {
+      position: unset;
+      top: 0;
+      left: 0;
+      transform: unset;
+      animation: unset;
+      z-index: 0;
+      text-align: center;
     }
     .gallery {
       display: grid;
