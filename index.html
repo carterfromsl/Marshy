@@ -279,12 +279,10 @@
 
 <script>
   window.addEventListener("load", function() {
-      setTimeout(function() {
-          const desktopElement = document.getElementById("desktop");
-          if (desktopElement) {
-              desktopElement.classList.remove("active");
-          }
-      }, 800);
+    const desktopElement = document.getElementById("desktop");
+    if (desktopElement) {
+      desktopElement.classList.remove("active");
+    }
   });
   
   function closePopup() {
