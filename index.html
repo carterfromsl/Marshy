@@ -32,9 +32,10 @@
       left: unset;
       top: calc(50% - 100px);
       right: calc(50% - 100px);
-      transition: all 0.8s steps(12);
+      transition: all 0.8s ease-in-out;
       animation: waveInertia 1.5s steps(6) infinite;
       transform-origin: bottom center;
+      filter: sepia(0) saturate(1) hue-rotate(0deg);
     }
     #desktop:not(.active) img {
       width: 80px;
@@ -42,6 +43,9 @@
       top: 0;
       right: 0;
       animation-delay: 0.8s;
+    }
+    #desktop img:hover {
+      filter: sepia(1) saturate(2) hue-rotate(180deg);
     }
     @keyframes waveInertia {
       0% {
