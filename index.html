@@ -18,20 +18,26 @@
       text-shadow: 0.05em 0.05em var(--black);
       font-family: 'Silkscreen', monospace;
     }
-    #popup {
-      z-index: 10;
-    }
     h4 {
       font-weight: bold;
       font-size: 1.25em;
       margin-bottom: 0.5em;
     }
-    .corner-img {
-      width: 80px;
+    #desktop img {
+      object-fit: contain;
       position: absolute;
+      width: 200px;
+      height: 200px;
+      left: unset;
+      top: calc(50% - 100px);
+      right: calc(50% - 100px);
+      transition: all 0.5s ease;
+    }
+    #desktop:not(.active) img {
+      width: 80px;
+      height: 80px;
       top: 0;
       right: 0;
-      pointer-events: none;
     }
     .video iframe {
       background: white;
@@ -105,6 +111,7 @@
       #popup {
         max-height: calc(100vh - 120px);
         margin-bottom: 40px;
+        z-index: 10;
     }
   </style>
 </head>
@@ -112,10 +119,8 @@
 <body>
 
 <h1>LLXI.me - Marshmallow "Marshy" Lovelace</h1>
-
-<img class="corner-img" src="https://cybersandbox.ca/wp-content/uploads/2024/11/annoying-dog.gif" alt="" width="250px" />
   
-<aside id="desktop">
+<aside id="desktop" class="active">
   <img src="https://cybersandbox.ca/wp-content/uploads/2024/11/annoying-dog.gif" alt="" width="250px" />
   <p><a class="button" href="https://llxi.me/" target="_blank">HOME</a></p>
 </aside>
@@ -222,13 +227,24 @@
   </nav>
 </main>
 
-<div class="backpanel"><button onClick="closePopup()">Launch Library</button></div>
+<div class="backpanel"><button onClick="closePopup()">Marshy's Homepage</button></div>
 
 <script>
+  window.addEventListener("load", function() {
+      setTimeout(function() {
+          const desktopElement = document.getElementById("desktop");
+          if (desktopElement) {
+              desktopElement.classList.remove("active");
+          }
+      }, 1000);
+  });
+  
   function closePopup() {
     event.preventDefault();
     var popup = document.getElementById('popup');
+    var desktop = document.getElementById('desktop');
     popup.classList.toggle('hidden');
+    desktop.classList.toggle('active');
   }
 
   //BDAY COUNTDOWN
