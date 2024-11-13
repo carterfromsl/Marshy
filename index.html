@@ -278,11 +278,13 @@
 <div class="backpanel"><button onClick="closePopup()">Marshy's Homepage</button></div>
 
 <script>
-  window.addEventListener("load", function() {
-    const desktopElement = document.getElementById("desktop");
-    if (desktopElement) {
-      desktopElement.classList.remove("active");
-    }
+    window.addEventListener("load", function() {
+      setTimeout(function() {
+          const desktopElement = document.getElementById("desktop");
+          if (desktopElement) {
+              desktopElement.classList.remove("active");
+          }
+      }, 200);
   });
   
   function closePopup() {
