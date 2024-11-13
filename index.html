@@ -32,7 +32,7 @@
       left: unset;
       top: calc(50% - 100px);
       right: calc(50% - 100px);
-      transition: all 0.5s ease;
+      transition: all 0.8s steps(8);
       animation: waveInertia 1.5s steps(6) infinite;
       transform-origin: bottom center;
     }
@@ -41,6 +41,7 @@
       height: 80px;
       top: 0;
       right: 0;
+      animation-delay: 0.8s;
     }
     @keyframes waveInertia {
       0% {
@@ -267,7 +268,7 @@
           if (desktopElement) {
               desktopElement.classList.remove("active");
           }
-      }, 1000);
+      }, 800);
   });
   
   function closePopup() {
