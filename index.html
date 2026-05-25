@@ -176,8 +176,8 @@
   <legend>Marshy's Homepage</legend>
 
   <div style="text-align: center;">
-    <p><b>Countdown to Marshy's 18th Birthday:</b></p>
-    <h3 id="countdown">0D:0H:0M:0S</h3>
+    <p><b>In Loving Memory</b></p>
+    <p>February 2007 - April 2026</p>
   </div>
 
   <hr />
@@ -242,7 +242,8 @@
       <li><b>Name:</b> Marshmallow "Marshy" Lovelace</li>
       <li><b>Species:</b> <em>Canis lupus familiaris</em></li>
       <li><b>Breed:</b> Havanese/Chihuahua Mix</li>
-      <li><b>Born:</b> February 12, 2007</li>
+      <li><b>Born:</b> February 13, 2007</li>
+      <li><b>Passed:</b> April 25, 2026</li>
       <li><b>Hobbies:</b> Wiggling in the grass; barking at nothing; sleeping; exploring.</li>
     </ul>
   </div>
@@ -293,35 +294,6 @@
     popup.classList.toggle('hidden');
     desktop.classList.toggle('active');
   }
-
-  //BDAY COUNTDOWN
-  function countdownToBirthday() {
-  const countdownElement = document.getElementById("countdown");
-  const targetDate = new Date("February 12, 2025 00:00:00 CST");
-
-  function updateCountdown() {
-    const now = new Date();
-    const timeRemaining = targetDate - now;
-
-    if (timeRemaining <= 0) {
-      countdownElement.textContent = "0D:0H:0M:0S";
-      clearInterval(interval);
-      return;
-    }
-
-    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-    countdownElement.textContent = `${days}D:${hours}H:${minutes}M:${seconds}S`;
-  }
-
-  const interval = setInterval(updateCountdown, 1000);
-  updateCountdown(); // Initial call to update immediately
-}
-
-countdownToBirthday();
 </script>
 
 </body>
